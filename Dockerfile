@@ -4,6 +4,6 @@
 #Expose port 9000
 
 FROM openjdk:17
-COPY target/contactsspringbootapi-0.0.1-SNAPSHOT.jar contactsspringbootapi-0.0.1-SNAPSHOT.jar
+COPY target/contactsrestapi-1.0.0.jar contactsspringbootapi-0.0.1-SNAPSHOT.jar
 EXPOSE 9000
 ENTRYPOINT ["java","-jar","contactsspringbootapi-0.0.1-SNAPSHOT.jar"]
