@@ -32,14 +32,14 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dockerImage = docker.build("contactsspringbootapi:${env.BUILD_NUMBER}")
+                    dockerImage = docker.build("mohyder/contactsbootapi:${env.BUILD_NUMBER}")
                 }
             }
         }
         stage('Push Docker Image') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockercred') {
                         dockerImage.push()
                     }
                 }
